@@ -2,6 +2,7 @@
 
 namespace App\Config;
 
+use App\Auth\DBAuthentificator;
 use App\Auth\DummyAuthenticator;
 
 /**
@@ -25,5 +26,5 @@ class Configuration
 
     public const DEBUG_QUERY = false;
 
-    public const AUTH_CLASS = DummyAuthenticator::class;
+    public const AUTH_CLASS = DBAuthentificator::class;
 }

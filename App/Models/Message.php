@@ -14,7 +14,7 @@ class Message extends Model
      * @param int $autor
      * @param string $message
      */
-    public function __construct(User $autor, string $message)
+    public function __construct(User $autor = null, string $message = "")
     {
         $this->autor = $autor->getId();
         $this->message = $message;

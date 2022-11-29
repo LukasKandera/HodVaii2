@@ -14,10 +14,17 @@ class User extends Model
      * @param string $name
      * @param string $passwd
      */
-    public function __construct(string $name, string $passwd)
+    public function __construct(string $name = "", string $passwd = "")
     {
         $this->name = $name;
         $this->passwd = $passwd;
+    }
+
+    public static function getOneByLogin($login): ?User
+    {
+        $result = self::getAll('name = ?',[$login]);
+        if(count($result) == 0) return null;
+        return $result[0];
     }
 
     /**
